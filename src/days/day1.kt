@@ -3,9 +3,13 @@ package days
 object Day1 {
 
     fun run() {
-        val solution = solve(input)
+        println("Day 1")
 
-        println(solution)
+        println("Part 1")
+        println(solve(input))
+
+        println("Part 2")
+        println(solve(input, input.size / 2))
 
 //        println("-----")
 //
@@ -24,11 +28,10 @@ object Day1 {
             return strInput.toCharArray().map { it.toString() }.map { it.toInt() }
         }
 
-    private fun solve(input: List<Int>): Int {
-
+    private fun solve(input: List<Int>, step: Int = 1): Int {
         return input
                 .mapIndexed { index, int ->
-                    val nextIndex = (index + input.size / 2) % input.size
+                    val nextIndex = (index + step) % input.size
                     Pair(int, input[nextIndex])
                 }
                 .filter {
