@@ -31,8 +31,7 @@ object Day1 {
     private fun solve(input: List<Int>, step: Int = 1): Int {
         return input
                 .mapIndexed { index, int ->
-                    val nextIndex = (index + step) % input.size
-                    Pair(int, input[nextIndex])
+                    Pair(int, input[(index + step) % input.size])
                 }
                 .filter {
                     it.first == it.second
