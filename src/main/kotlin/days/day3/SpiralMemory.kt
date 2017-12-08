@@ -8,6 +8,10 @@ class SpiralMemory<T> {
         return squares.firstOrNull { it.coordinate.x == coordinate.x && it.coordinate.y == coordinate.y }?.data
     }
 
+    fun getDataAt(x: Int, y: Int): T? {
+        return getDataAt(Coordinate(x, y))
+    }
+
     fun addNextSquare(data: T) {
         squares.add(Square(nextEmptySquare(), data))
     }

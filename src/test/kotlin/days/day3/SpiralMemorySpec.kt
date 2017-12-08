@@ -12,11 +12,38 @@ import kotlin.test.assertEquals
 class SpiralMemorySpec: SubjectSpek<SpiralMemory<Int>>({
     subject { SpiralMemory() }
 
-    describe("nextEmptySquare") {
+    fun addSquares(num: Int) {
+        num.times { subject.addNextSquare(it) }
+    }
 
-        fun addSquares(num: Int) {
-            num.times { subject.addNextSquare(1) }
+    describe("getDataAt when the squares have sequential numbers") {
+
+        beforeEachTest {
+            addSquares(100)
         }
+
+        it("returns 1 at 0,0") {
+            assertEquals(subject.getDataAt(0, 0), 1)
+        }
+
+        it("returns 2 at 1,0") {
+            assertEquals(subject.getDataAt(1, 0), 2)
+        }
+
+        it("returns 3 at 1,1") {
+            assertEquals(subject.getDataAt(1, 1), 3)
+        }
+
+        it("returns 20 at -2,-1") {
+            assertEquals(subject.getDataAt(-2, -1), 20)
+        }
+
+        it("returns 43 at -3,-3") {
+            assertEquals(subject.getDataAt(-3, -3), 43)
+        }
+    }
+
+    describe("nextEmptySquare") {
 
         it("returns 0,0 when the memory is empty") {
             assertEquals(subject.nextEmptySquare(),
@@ -63,6 +90,12 @@ class SpiralMemorySpec: SubjectSpek<SpiralMemory<Int>>({
             addSquares(7)
             assertEquals(subject.nextEmptySquare(),
                     SpiralMemory.Coordinate(0, -1))
+        }
+
+        it("returns 3,1 when there are 28 items in it") {
+            addSquares(28)
+            assertEquals(subject.nextEmptySquare(),
+                    SpiralMemory.Coordinate(3, 1))
         }
     }
 })

@@ -1,3 +1,3 @@
-fun Int.times(action: () -> Unit) {
-    (1..this).forEach { action() }
+fun Int.times(action: (i: Int) -> Unit) {
+    (1..this).forEach { action(it) }
 }
