@@ -1,6 +1,6 @@
-import days.Day1
-import days.Day2
-import days.Day3
+import days.day1.Day1
+import days.day2.Day2
+import days.day3.Day3
 
 fun main(args: Array<String>) {
     println("Advent of Code 2017")

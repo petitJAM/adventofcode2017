@@ -1,4 +1,4 @@
-package days
+package days.day2
 
 object Day2 {
 
