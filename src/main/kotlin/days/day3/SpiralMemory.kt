@@ -9,8 +9,7 @@ class SpiralMemory<T> {
     }
 
     fun addNextSquare(data: T) {
-        val nextCoord = nextEmptySquare()
-        squares.add(Square(nextCoord, data))
+        squares.add(Square(nextEmptySquare(), data))
     }
 
     fun nextEmptySquare(): Coordinate {

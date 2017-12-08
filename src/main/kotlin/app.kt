@@ -1,3 +1,5 @@
+@file:JvmName("Main")
+
 import days.day1.Day1
 import days.day2.Day2
 import days.day3.Day3
