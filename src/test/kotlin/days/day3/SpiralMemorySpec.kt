@@ -5,7 +5,6 @@ import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.subject.SubjectSpek
 import org.junit.platform.runner.JUnitPlatform
 import org.junit.runner.RunWith
-import times
 import kotlin.test.assertEquals
 
 @RunWith(JUnitPlatform::class)
@@ -13,7 +12,7 @@ class SpiralMemorySpec: SubjectSpek<SpiralMemory<Int>>({
     subject { SpiralMemory() }
 
     fun addSquares(num: Int) {
-        num.times { subject.addNextSquare(it) }
+        (1..num).forEach { subject.addNextSquare(it) }
     }
 
     describe("getDataAt when the squares have sequential numbers") {
