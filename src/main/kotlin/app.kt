@@ -6,11 +6,12 @@ import days.day3.Day3
 import days.day4.Day4
 import days.day5.Day5
 import days.day6.Day6
+import days.day7.Day7
 
 fun main(args: Array<String>) {
     println("Advent of Code 2017")
 //    io()
-    Day6.run()
+    Day7.run()
 }
 
 fun io() {
@@ -24,6 +25,7 @@ fun io() {
             "4" -> Day4.run()
             "5" -> Day5.run()
             "6" -> Day6.run()
+            "7" -> Day7.run()
             else -> println("What?")
         }
         println()
