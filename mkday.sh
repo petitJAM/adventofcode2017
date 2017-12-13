@@ -72,7 +72,9 @@ package days.day$day
 
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.describe
+import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
+import org.jetbrains.spek.api.dsl.xdescribe
 import org.junit.platform.runner.JUnitPlatform
 import org.junit.runner.RunWith
 import kotlin.test.assertEquals
@@ -80,20 +82,54 @@ import kotlin.test.assertEquals
 @RunWith(JUnitPlatform::class)
 object Day${day}Spec: Spek({
 
-    describe("Part 1") {
+    given("the example input") {
+        val rawInput = ""
+        val exampleInput = PuzzleInputParser.parse(rawInput)
 
-        describe("solve") {
-            it("works for simple input") {
-                assertEquals(0, Part1.solve(0))
+        describe("Part 1") {
+
+            describe("solve") {
+                it("works for the example input") {
+                    assertEquals(0, Part1.solve(exampleInput))
+                }
+            }
+        }
+
+        xdescribe("Part 2") {
+
+            describe("solve") {
+                it("works for the example input") {
+                    assertEquals(0, Part2.solve(exampleInput))
+                }
             }
         }
     }
+})
+EOF
 
-    describe("Part 2") {
+cat << EOF > "src/test/kotlin/days/day$day/PuzzleInputParserSpec.kt"
+package days.day$day
 
-        describe("solve") {
-            it("works for simple input") {
-                assertEquals(0, Part2.solve(0))
+import org.jetbrains.spek.api.Spek
+import org.jetbrains.spek.api.dsl.describe
+import org.jetbrains.spek.api.dsl.given
+import org.jetbrains.spek.api.dsl.it
+import org.junit.platform.runner.JUnitPlatform
+import org.junit.runner.RunWith
+import kotlin.test.assertEquals
+
+@RunWith(JUnitPlatform::class)
+class PuzzleInputParseSpec: Spek({
+
+    describe("parse") {
+
+        given("the example input") {
+
+            val exampleInput = ""
+
+            it("creates a list of instructions") {
+                val expected = Any()
+                assertEquals(expected, PuzzleInputParser.parse(exampleInput))
             }
         }
     }

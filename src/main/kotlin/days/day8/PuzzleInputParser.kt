@@ -6,9 +6,6 @@ object PuzzleInputParser {
         return puzzleInput.split("\n")
                 .filterNot { it.isBlank() }
                 .map { line ->
-                    if (line.split(" if ").size < 2) {
-                        println()
-                    }
                     val (instructionStr, conditionStr) = line.split(" if ")
                     val (register, operationStr, amount) = instructionStr.split(" ")
                     val (comparedRegister, comparisonStr, compareToStr) = conditionStr.split(" ")
