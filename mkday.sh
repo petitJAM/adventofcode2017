@@ -12,12 +12,19 @@ export day
 mkdir -p "src/main/kotlin/days/day$day"
 mkdir -p "src/test/kotlin/days/day$day"
 
+touch "src/main/resources/puzzleInputs/day$day.txt"
+
 cat << EOF > "src/main/kotlin/days/day$day/Day$day.kt"
 package days.day$day
+
+import util.PuzzleInputReader
 
 object Day$day {
 
     fun run() {
+        val rawInput = PuzzleInputReader("puzzleInputs/day$day.txt").readFile()
+        val puzzleInput = PuzzleInputParser.parse(rawInput)
+
         println("Part 1")
         println(Part1.solve(puzzleInput))
 
@@ -45,6 +52,17 @@ object Part2 {
 
     fun solve(puzzleInput: Any): Any {
         TODO()
+    }
+}
+EOF
+
+cat << EOF > "src/main/kotlin/days/day$day/PuzzleInputParser.kt"
+package days.day$day
+
+object PuzzleInputParser {
+
+    fun parse(puzzleInput: String): Any {
+        return Any()
     }
 }
 EOF
@@ -80,10 +98,4 @@ object Day${day}Spec: Spek({
         }
     }
 })
-EOF
-
-cat << EOF > "src/main/kotlin/days/day$day/puzzleInput.kt"
-package days.day$day
-
-val puzzleInput = Any()
 EOF
