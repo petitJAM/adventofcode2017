@@ -1,35 +1,40 @@
 @file:JvmName("Main")
 
-import days.day1.Day1
-import days.day2.Day2
-import days.day3.Day3
-import days.day4.Day4
-import days.day5.Day5
-import days.day6.Day6
-import days.day7.Day7
-import days.day8.Day8
+import days.Day
 
 fun main(args: Array<String>) {
     println("Advent of Code 2017")
-//    io()
-    Day8.run()
+    io()
 }
 
+private val days: List<String> = (1..25).map { it.toString() }
+
 fun io() {
-    println("Enter a day number: ")
+    println("Enter a day number or 'q' to quit: ")
     while (true) {
-        when(readLine()) {
-            "q" -> System.exit(0)
-            "1" -> Day1.run()
-            "2" -> Day2.run()
-            "3" -> Day3.run()
-            "4" -> Day4.run()
-            "5" -> Day5.run()
-            "6" -> Day6.run()
-            "7" -> Day7.run()
-            "8" -> Day8.run()
-            else -> println("What?")
+        try {
+            val input = readLine() ?: ""
+            when(input) {
+                "q" -> {
+                    println("Goodbye! ^_^")
+                    System.exit(0)
+                }
+                in days -> run(input)
+                else -> println("That's not a valid day! >.>")
+            }
+        } catch (ex: Error) {
+            println("Whoops! That one is broken :(")
         }
         println()
+    }
+}
+
+private fun run(dayNumber: String) {
+    try {
+        val kClass = Class.forName("days.day$dayNumber.Day$dayNumber").kotlin
+        val day = kClass.objectInstance as Day
+        day.run()
+    } catch (ex: ClassNotFoundException) {
+        println("That day doesn't exist yet! :(")
     }
 }

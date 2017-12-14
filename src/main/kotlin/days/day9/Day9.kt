@@ -1,10 +1,12 @@
 package days.day9
 
+import days.Day
 import util.PuzzleInputReader
 
-object Day9 {
+@Suppress("unused")
+object Day9 : Day {
 
-    fun run() {
+    override fun run() {
         val stream = PuzzleInputReader("puzzleInputs/day9.txt").readFile()
 
         println("Part 1")

@@ -17,9 +17,11 @@ touch "src/main/resources/puzzleInputs/day$day.txt"
 cat << EOF > "src/main/kotlin/days/day$day/Day$day.kt"
 package days.day$day
 
+import days.Day
 import util.PuzzleInputReader
 
-object Day$day {
+@Suppress("unused")
+object Day$day : Day {
 
     fun run() {
         val rawInput = PuzzleInputReader("puzzleInputs/day$day.txt").readFile()

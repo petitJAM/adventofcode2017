@@ -1,8 +1,11 @@
 package days.day3
 
-object Day3 {
+import days.Day
 
-    fun run() {
+@Suppress("unused")
+object Day3 : Day {
+
+    override fun run() {
         println("Day 3")
 
         println("Part 1")

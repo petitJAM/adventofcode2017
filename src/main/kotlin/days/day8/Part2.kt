@@ -1,6 +1,5 @@
 package days.day8
 
-import util.NotSolvableError
 import util.head
 import util.tail
 

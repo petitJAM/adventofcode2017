@@ -1,8 +1,11 @@
 package days.day6
 
-object Day6 {
+import days.Day
 
-    fun run() {
+@Suppress("unused")
+object Day6 : Day {
+
+    override fun run() {
         val input = puzzleInput.split("\t").map(String::toInt)
 
         println("Part 1")
