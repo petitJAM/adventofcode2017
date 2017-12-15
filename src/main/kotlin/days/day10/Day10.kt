@@ -7,13 +7,13 @@ import util.PuzzleInputReader
 object Day10 : Day {
 
     override fun run() {
-        val rawInput = PuzzleInputReader("puzzleInputs/day10.txt").readFile()
+        val rawInput = PuzzleInputReader("puzzleInputs/day10.txt").readFile().trim()
         val puzzleInput = PuzzleInputParser.parse(rawInput)
 
         println("Part 1")
         println(Part1.solve(puzzleInput, 256))
 
         println("Part 2")
-        println(Part2.solve(puzzleInput))
+        println(Part2.solve(rawInput))
     }
 }
