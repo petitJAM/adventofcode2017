@@ -2,7 +2,7 @@ package days.day11
 
 object Part1 {
 
-    fun solve(puzzleInput: Any): Any {
+    fun solve(puzzleInput: List<String>): Int {
         TODO()
     }
 }

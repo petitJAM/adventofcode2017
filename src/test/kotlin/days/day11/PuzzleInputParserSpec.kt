@@ -13,13 +13,33 @@ class PuzzleInputParserSpec : Spek({
 
     describe("parse") {
 
-        given("the example input") {
+        given("the example inputs") {
 
-            val exampleInput = ""
+            val exampleInput1 = "ne,ne,ne"
+            val exampleInput2 = "ne,ne,sw,sw"
+            val exampleInput3 = "ne,ne,s,s"
+            val exampleInput4 = "se,sw,se,sw,sw"
 
-            it("creates a list of instructions") {
-                val expected = Any()
-                assertEquals(expected, PuzzleInputParser.parse(exampleInput))
+
+            it("works for example input 1") {
+                val expected = listOf("ne", "ne", "ne")
+                assertEquals(expected, PuzzleInputParser.parse(exampleInput1))
+            }
+
+            it("works for example input 1") {
+                val expected = listOf("ne", "ne", "sw", "sw")
+                assertEquals(expected, PuzzleInputParser.parse(exampleInput2))
+            }
+
+            it("works for example input 1") {
+                val expected = listOf("ne", "ne", "s", "s")
+                assertEquals(expected, PuzzleInputParser.parse(exampleInput3))
+            }
+
+            it("works for example input 1") {
+                val expected = listOf("se", "sw", "se", "sw", "sw")
+                assertEquals(expected, PuzzleInputParser.parse(exampleInput4
+                ))
             }
         }
     }
