@@ -22,7 +22,7 @@ object Day9Spec: Spek({
         val exampleInput7 = "{{<!!>},{<!!>},{<!!>},{<!!>}}"
         val exampleInput8 = "{{<a!>},{<a!>},{<a!>},{<ab>}}"
 
-        describe("Part 1") {
+        xdescribe("Part 1") {
 
             describe("solve") {
 
@@ -60,11 +60,79 @@ object Day9Spec: Spek({
             }
         }
 
-        xdescribe("Part 2") {
+        describe("Part 2") {
 
-            describe("solve") {
-                it("works for simple input") {
+            xdescribe("solve") {
+                it("works for example input 1") {
                     assertEquals(0, Part2.solve(exampleInput1))
+                }
+
+                it("works for example input 2") {
+                    assertEquals(0, Part2.solve(exampleInput2))
+                }
+
+                it("works for example input 3") {
+                    assertEquals(0, Part2.solve(exampleInput3))
+                }
+
+                it("works for example input 4") {
+                    assertEquals(0, Part2.solve(exampleInput4))
+                }
+
+                it("works for example input 5") {
+                    assertEquals(4, Part2.solve(exampleInput5))
+                }
+
+                it("works for example input 6") {
+                    assertEquals(8, Part2.solve(exampleInput6))
+                }
+
+                it("works for example input 7") {
+                    assertEquals(0, Part2.solve(exampleInput7))
+                }
+
+                it("works for example input 8") {
+                    assertEquals(17, Part2.solve(exampleInput8))
+                }
+            }
+
+            given("extra examples") {
+                val extraInput1 = "{<>}"
+                val extraInput2 = "{<random characters>}"
+                val extraInput3 = "{<<<<>}"
+                val extraInput4 = "{<{!>}>}"
+                val extraInput5 = "{<!!>}"
+                val extraInput6 = "{<!!!>>}"
+                val extraInput7 = "{<{o\"i!a,<{i<a>}"
+
+                describe("solve") {
+                    it("works for extra input 1") {
+                        assertEquals(0, Part2.solve(extraInput1))
+                    }
+
+                    it("works for extra input 2") {
+                        assertEquals(17, Part2.solve(extraInput2))
+                    }
+
+                    it("works for extra input 3") {
+                        assertEquals(3, Part2.solve(extraInput3))
+                    }
+
+                    it("works for extra input 4") {
+                        assertEquals(2, Part2.solve(extraInput4))
+                    }
+
+                    it("works for extra input 5") {
+                        assertEquals(0, Part2.solve(extraInput5))
+                    }
+
+                    it("works for extra input 6") {
+                        assertEquals(0, Part2.solve(extraInput6))
+                    }
+
+                    it("works for extra input 7") {
+                        assertEquals(10, Part2.solve(extraInput7))
+                    }
                 }
             }
         }
