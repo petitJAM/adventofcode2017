@@ -23,7 +23,7 @@ import util.PuzzleInputReader
 @Suppress("unused")
 object Day$day : Day {
 
-    fun run() {
+    override fun run() {
         val rawInput = PuzzleInputReader("puzzleInputs/day$day.txt").readFile()
         val puzzleInput = PuzzleInputParser.parse(rawInput)
 
@@ -82,7 +82,7 @@ import org.junit.runner.RunWith
 import kotlin.test.assertEquals
 
 @RunWith(JUnitPlatform::class)
-object Day${day}Spec: Spek({
+object Day${day}Spec : Spek({
 
     given("the example input") {
         val rawInput = ""
@@ -121,7 +121,7 @@ import org.junit.runner.RunWith
 import kotlin.test.assertEquals
 
 @RunWith(JUnitPlatform::class)
-class PuzzleInputParseSpec: Spek({
+class PuzzleInputParserSpec : Spek({
 
     describe("parse") {
 

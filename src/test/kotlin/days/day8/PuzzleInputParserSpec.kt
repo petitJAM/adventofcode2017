@@ -9,7 +9,7 @@ import org.junit.runner.RunWith
 import kotlin.test.assertEquals
 
 @RunWith(JUnitPlatform::class)
-class PuzzleInputParseSpec: Spek({
+class PuzzleInputParserSpec : Spek({
 
     describe("parse") {
 
