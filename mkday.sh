@@ -64,7 +64,7 @@ package days.day$day
 object PuzzleInputParser {
 
     fun parse(puzzleInput: String): Any {
-        return Any()
+        TODO()
     }
 }
 EOF

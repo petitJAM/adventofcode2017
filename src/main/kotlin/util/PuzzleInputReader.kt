@@ -18,6 +18,6 @@ class PuzzleInputReader(private val fileName: String) {
             it.close()
         }
 
-        return sb.toString()
+        return sb.toString().trim()
     }
 }

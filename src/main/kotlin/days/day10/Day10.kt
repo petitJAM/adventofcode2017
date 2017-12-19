@@ -7,7 +7,7 @@ import util.PuzzleInputReader
 object Day10 : Day {
 
     override fun run() {
-        val rawInput = PuzzleInputReader("puzzleInputs/day10.txt").readFile().trim()
+        val rawInput = PuzzleInputReader("puzzleInputs/day10.txt").readFile()
         val puzzleInput = PuzzleInputParser.parse(rawInput)
 
         println("Part 1")

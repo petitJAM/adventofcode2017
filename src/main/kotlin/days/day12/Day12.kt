@@ -1,13 +1,13 @@
-package days.day11
+package days.day12
 
 import days.Day
 import util.PuzzleInputReader
 
 @Suppress("unused")
-object Day11 : Day {
+object Day12 : Day {
 
     override fun run() {
-        val rawInput = PuzzleInputReader("puzzleInputs/day11.txt").readFile()
+        val rawInput = PuzzleInputReader("puzzleInputs/day12.txt").readFile()
         val puzzleInput = PuzzleInputParser.parse(rawInput)
 
         println("Part 1")

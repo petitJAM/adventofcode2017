@@ -22,7 +22,7 @@ object Day9Spec: Spek({
         val exampleInput7 = "{{<!!>},{<!!>},{<!!>},{<!!>}}"
         val exampleInput8 = "{{<a!>},{<a!>},{<a!>},{<ab>}}"
 
-        xdescribe("Part 1") {
+        describe("Part 1") {
 
             describe("solve") {
 
@@ -62,7 +62,7 @@ object Day9Spec: Spek({
 
         describe("Part 2") {
 
-            xdescribe("solve") {
+            describe("solve") {
                 it("works for example input 1") {
                     assertEquals(0, Part2.solve(exampleInput1))
                 }
