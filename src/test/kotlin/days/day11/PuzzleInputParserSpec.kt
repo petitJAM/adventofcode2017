@@ -20,7 +20,6 @@ class PuzzleInputParserSpec : Spek({
             val exampleInput3 = "ne,ne,s,s"
             val exampleInput4 = "se,sw,se,sw,sw"
 
-
             it("works for example input 1") {
                 val expected = listOf("ne", "ne", "ne")
                 assertEquals(expected, PuzzleInputParser.parse(exampleInput1))
