@@ -33,11 +33,11 @@ object Day12Spec : Spek({
             }
         }
 
-        xdescribe("Part 2") {
+        describe("Part 2") {
 
             describe("solve") {
                 it("works for the example input") {
-                    assertEquals(0, Part2.solve(exampleInput))
+                    assertEquals(2, Part2.solve(exampleInput))
                 }
             }
         }
@@ -57,9 +57,51 @@ object Day12Spec : Spek({
             """.trimMargin()
         val extraInput = PuzzleInputParser.parse(rawInput)
 
-        describe("solve") {
-            it("works for the extra input") {
-                assertEquals(5, Part1.solve(extraInput))
+        describe("Part 1") {
+
+            describe("solve") {
+                it("works for the extra input") {
+                    assertEquals(5, Part1.solve(extraInput))
+                }
+            }
+        }
+
+        describe("Part 2") {
+
+            describe("solve") {
+
+                it("works for the extra input") {
+                    assertEquals(2, Part2.solve(extraInput))
+                }
+            }
+        }
+    }
+
+    given("more extra input") {
+        val rawInput = """
+            |0 <-> 3, 4
+            |1 <-> 2, 3
+            |2 <-> 1
+            |3 <-> 0, 1, 4
+            |4 <-> 0, 3
+            |5 <-> 6, 7
+            |6 <-> 5
+            |7 <-> 5, 8
+            |8 <-> 7
+            |9 <-> 10, 11
+            |10 <-> 9, 12
+            |11 <-> 9, 12
+            |12 <-> 10, 11
+            """.trimMargin()
+        val extraInput = PuzzleInputParser.parse(rawInput)
+
+        describe("Part 2") {
+
+            describe("solve") {
+
+                it("works for more extra input") {
+                    assertEquals(3, Part2.solve(extraInput))
+                }
             }
         }
     }
